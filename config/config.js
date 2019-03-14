@@ -2,7 +2,10 @@
 import { primaryColor } from '../src/defaultSettings';
 import pageRoutes from './router.config';
 import webpackPlugin from './plugin.config';
+var prodPublicPath = '/bannermanage/';
+const env = process.env.NODE_ENV;
 export default {
+  publicPath: env === 'development' ? '/' : prodPublicPath,
   chainWebpack: webpackPlugin,
   plugins: [
     [
